@@ -39,8 +39,10 @@ Route::get('/', [UserController::class, 'index'])->name('userHome');
 
 Route::resource('/posts', \App\Http\Controllers\PostController::class);
 Route::resource('/guru', \App\Http\Controllers\GuruController::class);
-Route::resource('/fasilitas', \App\Http\Controllers\FasilitasController::class);
-    Route::resource('/posting', \App\Http\Controllers\PostingController::class);
+Route::resource('/posting', \App\Http\Controllers\PostingController::class);
+Route::resource('/fasiliti', \App\Http\Controllers\FasilitiController::class);
+Route::resource('/project', \App\Http\Controllers\ProjectController::class);
+Route::resource('/dokumen', \App\Http\Controllers\DokumenController::class);
 
 
 

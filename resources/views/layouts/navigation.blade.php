@@ -15,24 +15,21 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('fasiliti.index')" :active="request()->routeIs('fasiliti.index')">
+                        {{ __('Fasilitas') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('guru.index')" :active="request()->routeIs('guru.index')">
+                        {{ __('Guru') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('dokumen.index')" :active="request()->routeIs('dokumen.index')">
+                        {{ __('Dokumen') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('project.index')" :active="request()->routeIs('project.index')">
+                        {{ __('Project') }}
+                    </x-nav-link>
 
 
 
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown button
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('posts.index') }}"> Welcome</a></li>
-                            <li><a class="dropdown-item" href="{{ route('fasilitas.index') }}">Fasilitas</a></li>
-                            <li><a class="dropdown-item" href="{{ route('fasilitas.index') }}">Guru</a>
-                            <li><a class="dropdown-item" href="{{ route('fasilitas.index') }}">Guru</a>
-                            <li><a class="dropdown-item" href="{{ route('fasilitas.index') }}">Guru</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 

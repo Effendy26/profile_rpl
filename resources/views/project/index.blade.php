@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Guru</title>
+    <title>Data Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -20,7 +20,8 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('guru.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                        <a href="{{ route('project.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                        <a href="{{ route('dashboard') }}" class="btn btn-md btn-success mb-3"> KEMBALI</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -31,20 +32,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($gurus as $guru)
+                                @forelse ($projects as $project)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/guru/' . $guru->image) }}" class="rounded"
+                                            <img src="{{ asset('/storage/project/' . $project->image) }}" class="rounded"
                                                 style="width: 150px">
                                         </td>
-                                        <td>{{ $guru->title }}</td>
-                                        <td>{!! $guru->content !!}</td>
+                                        <td>{{ $project->title }}</td>
+                                        <td>{!! $project->content !!}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                action="{{ route('guru.destroy', $guru->id) }}" method="POST">
-                                                <a href="{{ route('guru.show', $guru->id) }}"
+                                                action="{{ route('project.destroy', $project->id) }}" method="POST">
+                                                <a href="{{ route('project.show', $project->id) }}"
                                                     class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('guru.edit', $guru->id) }}"
+                                                <a href="{{ route('project.edit', $project->id) }}"
                                                     class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
@@ -59,7 +60,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $gurus->links() }}
+                        {{ $projects->links() }}
                     </div>
                 </div>
             </div>

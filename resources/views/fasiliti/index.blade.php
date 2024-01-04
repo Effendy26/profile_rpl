@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Guru</title>
+    <title>Data Fasilitas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <a href="{{ route('guru.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                        <a href="{{ route('fasiliti.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -31,20 +31,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($gurus as $guru)
+                                @forelse ($fasilitis as $fasiliti)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/guru/' . $guru->image) }}" class="rounded"
+                                            <img src="{{ asset('/storage/fasiliti/' . $fasiliti->image) }}" class="rounded"
                                                 style="width: 150px">
                                         </td>
-                                        <td>{{ $guru->title }}</td>
-                                        <td>{!! $guru->content !!}</td>
+                                        <td>{{ $fasiliti->title }}</td>
+                                        <td>{!! $fasiliti->content !!}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                action="{{ route('guru.destroy', $guru->id) }}" method="POST">
-                                                <a href="{{ route('guru.show', $guru->id) }}"
+                                                action="{{ route('fasiliti.destroy', $fasiliti->id) }}" method="POST">
+                                                <a href="{{ route('fasiliti.show', $fasiliti->id) }}"
                                                     class="btn btn-sm btn-dark">SHOW</a>
-                                                <a href="{{ route('guru.edit', $guru->id) }}"
+                                                <a href="{{ route('fasiliti.edit', $fasiliti->id) }}"
                                                     class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
@@ -59,7 +59,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $gurus->links() }}
+                        {{ $fasilitis->links() }}
                     </div>
                 </div>
             </div>
